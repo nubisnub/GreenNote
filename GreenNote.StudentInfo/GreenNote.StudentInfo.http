@@ -1,0 +1,6 @@
+@GreenNote.StudentInfo_HostAddress = http://localhost:5185
+
+GET {{GreenNote.StudentInfo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,17 @@
+﻿<div class="row pb-3">
+	<form asp-controller="ClassInfo" asp-action="ClassInfoIndex">
+
+		<div class="col-3">
+			<select class="form-select" name="studentName" asp-items="@ViewBag.StudentNameList">
+				<option disabled selected>--Select Student--</option>
+			</select>
+		</div>
+
+		<div class="col-3">
+			<input type="submit" value="Select" class="btn btn-success form-control" />
+		</div>
+	</form>
+
+	<div class="col-6">
+	</div>
+</div>

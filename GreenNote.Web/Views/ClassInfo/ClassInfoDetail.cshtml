@@ -1,0 +1,56 @@
+﻿@model ClassInfoDto
+
+<form asp-action="ClassInfoDetail">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-center">Create ClassInfo</h1>
+
+        <hr />
+        <input asp-for="Id" hidden />
+        <div class="row">
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Student Name</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" value="@Model.Name" class="form-control" disabled />
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Class Day</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input value="@Model.ClassDay.ToString("yyyy-MM-dd")" class="form-control" disabled/>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Review Ratio</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="ReviewRatio" value="@Model.ReviewRatio" class="form-control" />
+                <span asp-validation-for="ReviewRatio" class="text-danger " />
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Contents</label>
+            </div>
+            <div class="col-12 pb-3">
+                <textarea asp-for="ClassContent" class="form-control" rows="7"></textarea>
+                <span asp-validation-for="ClassContent" class="text-danger " />
+            </div>
+
+            <div class="col-4 offset-2">
+
+                <a asp-action="ClassInfoIndex" class="btn-primary btn form-control ">Back to List</a>
+            </div>
+            <div class="col-3">
+                <a asp-controller="ClassInfo" asp-action="ClassInfoUpdate" asp-route-classInfoDto="@Model" class="btn btn-success form-control">Update</a>
+            </div>
+            <div class="col-3">
+                <a asp-controller="ClassInfo" asp-action="ClassInfoDelete" class="btn btn-success form-control ">Delete</a>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
